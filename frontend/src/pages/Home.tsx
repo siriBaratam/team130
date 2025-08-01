@@ -14,6 +14,7 @@ import { useUser } from '@/contexts/UserContext';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import heroBackground from '@/assets/hero-background.png';
+import { useNavigate } from 'react-router-dom';
 
 const Home: React.FC = () => {
   const { stats, settings } = useUser();
@@ -48,7 +49,7 @@ const Home: React.FC = () => {
       color: 'hsl(var(--tip-primary))',
     },
   ];
-
+  const navigator = useNavigate();
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -77,10 +78,9 @@ const Home: React.FC = () => {
                   className="text-4xl sm:text-5xl lg:text-6xl font-bold"
                 >
                   Hello, 
-                  <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                    {settings.username}
+                  <span className="bg-gradient-to-r p-2 from-primary to-accent bg-clip-text text-transparent">
+                    {settings.username} !
                   </span>
-                  ! 👋
                 </motion.h1>
                 
                 <motion.p 
@@ -100,14 +100,16 @@ const Home: React.FC = () => {
                 transition={{ delay: 0.6, duration: 0.6 }}
                 className="flex flex-wrap gap-4"
               >
-                <Button size="lg" className="study-button">
+                <Button size="lg" className="study-button" onClick={() => navigator('/edu-extract')}>
                   <Zap className="mr-2 h-5 w-5" />
                   Start Learning
                 </Button>
+                <a href="#progress">
                 <Button variant="outline" size="lg" className="border-border hover:bg-primary/5">
                   <TrendingUp className="mr-2 h-5 w-5" />
                   View Progress
                 </Button>
+                </a>
               </motion.div>
             </motion.div>
 
@@ -118,7 +120,7 @@ const Home: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
               className="relative"
             >
-              <Card className="overflow-hidden shadow-2xl">
+              <Card className="overflow-hidden shadow-lg">
                 <div className="relative aspect-video bg-gradient-to-br from-primary/10 to-accent/10 
                                flex items-center justify-center group cursor-pointer
                                hover:from-primary/20 hover:to-accent/20 transition-all duration-300">
@@ -134,7 +136,7 @@ const Home: React.FC = () => {
                     <h3 className="text-lg font-semibold text-foreground">
                       Study Instant Kit Demo
                     </h3>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-muted-foreground" id="progress">
                       1-minute overview of your AI study companion
                     </p>
                   </div>
@@ -227,7 +229,7 @@ const Home: React.FC = () => {
                 <Button 
                   variant="outline" 
                   className="w-full group-hover:bg-primary group-hover:text-primary-foreground
-                           transition-all duration-300"
+                           transition-all duration-300" onClick={() => navigator(action.path)}
                 >
                   Get Started
                 </Button>

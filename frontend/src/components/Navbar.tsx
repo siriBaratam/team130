@@ -19,7 +19,6 @@ export const Navbar: React.FC = () => {
 
   return (
     <motion.nav 
-      initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="sticky top-0 z-50 w-full border-b border-border/50 
@@ -55,7 +54,7 @@ export const Navbar: React.FC = () => {
                     className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium 
                                transition-all duration-300 relative group ${
                       isActive 
-                        ? 'text-primary bg-primary/10 shadow-sm' 
+                        ? 'text-primary bg-primary/5 shadow-sm' 
                         : 'text-foreground hover:text-primary hover:bg-primary/5'
                     }`}
                   >
