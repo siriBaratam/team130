@@ -32,11 +32,11 @@ interface UserContextType {
 }
 
 const defaultStats: UserStats = {
-  quizzesTaken: 12,
-  questionsAnswered: 48,
-  summariesGenerated: 8,
-  flashcardsCreated: 24,
-  totalStudyTime: 125,
+  quizzesTaken: 0,
+  questionsAnswered: 0,
+  summariesGenerated: 0,
+  flashcardsCreated: 0,
+  totalStudyTime: 0,
 };
 
 const defaultSettings: UserSettings = {

@@ -22,6 +22,21 @@ import { useUser } from '@/contexts/UserContext';
 
 type AnalysisType = 'quiz' | 'summary' | 'flashcards' | 'qa';
 
+const uploadPdf  = async(selectedFile) => {
+const formData = new FormData();
+  formData.append("file", selectedFile); // File object from input
+  formData.append("task", "summary"); // or "quiz", "qa", "flashcards"
+
+  const res = await fetch("http://localhost:5000/upload", {
+  method: "POST",
+  body: formData,
+  });
+
+  const { job_id } = await res.json();
+  console.log("File uploaded successfully:", selectedFile);
+  console.log("Job ID:", job_id);
+};
+
 const EduExtract: React.FC = () => {
   const [inputText, setInputText] = useState('');
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
