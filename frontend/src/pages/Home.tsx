@@ -90,7 +90,7 @@ const Home: React.FC = () => {
                   className="text-xl text-muted-foreground leading-relaxed"
                 >
                   Welcome back to your AI-powered study companion. 
-                  Ready to unlock your learning potential today?
+                  Ready to unlock your learning potential today?.
                 </motion.p>
               </div>
 
