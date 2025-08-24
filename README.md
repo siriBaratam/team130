@@ -9,10 +9,10 @@ Follow these steps:
 
 ```sh
 # Step 1: Clone the repository using the project's Git URL.
-git clone https://github.com/siriBaratam/team130.git
+git clone https://github.com/siriBaratam/instant-study-kit-ml.git
 
 # Step 2: Navigate to the project directory.
-cd team130
+cd instant-study-kit-ml
 cd frontend
 
 # Step 3: Install the necessary dependencies.
@@ -34,9 +34,7 @@ This project is built with:
 - Tailwind CSS
 
 **backend:**
-- Flask
-- Hugging Face Transformers
-- PyTorch
+- Hugging Face
 - dotenv
 - llm model: Mistral-7B-Instruct-v0.3
 
